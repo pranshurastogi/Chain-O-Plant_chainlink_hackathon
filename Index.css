@@ -61,7 +61,7 @@ color:white;
     border-radius: 9px;
 }
 .background{
-    background: rgba(20, 19, 19, 0.7) url(./images/img2.jpg);
+    background: rgba(20, 19, 19, 0.7) url(./images/img3.jpg);
     background-size: cover;
     background-blend-mode: darken;
 }
