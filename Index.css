@@ -10,11 +10,13 @@
 }
 .logo img {
     width:33%;
-    border: 2px solid white;
+    border: 2px solid grey;
     border-radius:50%;
+    filter: invert(100%);
 }
 
 .navbar{
+    z-index: 1;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -63,8 +65,11 @@ color:white;
 .background{
     background: rgba(20, 19, 19, 0.7) url(./images/img3.jpg);
     background-size: cover;
+    height: 100%;
     background-blend-mode: darken;
+    
 }
+
 
 .firstSection{
     height: 100vh;
@@ -86,11 +91,12 @@ color:white;
 }
 .secondHalf img{
     width:60%;
-    border: 4px solid white;
+    border: 4px solid grey;
     border-radius: 150px;
     display:block;
     margin: auto;
-
+    position: sticky;
+    filter: invert(100%);
 }
 .big-text{
 font-size:32px;
@@ -110,4 +116,42 @@ padding-bottom: 15px;
   background: none;
   color:white;
   cursor: pointer;
+}
+.btn-sm{
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+.proj-heading{
+text-align: center;
+margin-top: 80px;
+margin-bottom: 0px;
+font-size: 48px;
+color: rgb(15, 94, 139);
+}
+.section{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    
+    margin: auto;
+}
+.left{
+    height: 100px;
+    flex-direction: row-reverse;
+}
+.sectionTag{
+    padding: 16px 0;
+    font-size: 22px;
+   
+}
+.paras{
+    padding: 0px 65px ;
+}
+.thumbnail img{
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-top: 19px;
 }
