@@ -121,6 +121,11 @@ padding-bottom: 15px;
     padding: 6px 10px;
     vertical-align: middle;
 }
+.btn-dark{
+    color: white;
+    background-color: rgb(27, 27, 182);
+    border: 2px solid rgb(241, 242, 245);
+}
 .proj-heading{
 text-align: center;
 margin-top: 80px;
@@ -129,7 +134,8 @@ font-size: 48px;
 color: rgb(15, 94, 139);
 }
 .section{
-    height: 400px;
+
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -154,4 +160,40 @@ color: rgb(15, 94, 139);
     border: 2px solid black;
     border-radius: 25px;
     margin-top: 19px;
+}
+.contact{
+    background-image: url("./images/contact1.jpg");
+    margin-top: 99px;
+    background-color: rgb(248, 246, 242);
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+ opacity: 0.8;
+}
+.text-center{
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+.form{
+    max-width: 700px;
+    margin: 32px auto;
+}
+
+.form-input{
+    width: 100%;
+    font-size: 11px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    margin: 12px 0;
+    padding: 15px 13px;
+}
+.text-footer{
+    text-align: center;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+
 }
