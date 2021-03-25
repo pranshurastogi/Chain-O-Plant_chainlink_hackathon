@@ -1,0 +1,864 @@
+{
+  "contractName": "TokenSale",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract greencoin",
+          "name": "_ercToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenPrice",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "ercToken",
+      "outputs": [
+        {
+          "internalType": "contract greencoin",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "tokenPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract greencoin\",\"name\":\"_ercToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenPrice\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ercToken\",\"outputs\":[{\"internalType\":\"contract greencoin\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/TokenSale.sol\":\"TokenSale\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/TokenSale.sol\":{\"keccak256\":\"0x32fd0e1ff5c42c67219fd54b933131465715f8396719c4a5cbbe83da7dd4f619\",\"urls\":[\"bzz-raw://3282b56dfc775e05eeffd49a03604d684286893641a2eb30ee551dc6de3a8947\",\"dweb:/ipfs/Qmeq2EYCGqXzjVdXKLfR6xZdxwh1fLzHvQ2qSH92D3CcFV\"]},\"/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/greencoin.sol\":{\"keccak256\":\"0xc6416b416fc94ddad85c30a4660be1925e7b5b51c10d354ab8f351f235928c0f\",\"urls\":[\"bzz-raw://626f94730e179f62d5eec54010b3624b0d756c6d80b5fc8c5561a1985a5432f4\",\"dweb:/ipfs/QmQYWEuiaGgG1ZS8mxBqPNzdcDtThg44RTvHE9Yk54AYKu\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516101cd3803806101cd8339818101604052604081101561003357600080fd5b810190808051906020019092919080519060200190929190505050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600181905550505060e7806100e66000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80637f2f767e1460375780637ff9b596146069575b600080fd5b603d6085565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b606f60ab565b6040518082815260200191505060405180910390f35b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6001548156fea26469706673582212204f80c8126a519881a99c395bf16a00ab6e893cbda0134e890bfc9da408f9210964736f6c63430007060033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80637f2f767e1460375780637ff9b596146069575b600080fd5b603d6085565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b606f60ab565b6040518082815260200191505060405180910390f35b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6001548156fea26469706673582212204f80c8126a519881a99c395bf16a00ab6e893cbda0134e890bfc9da408f9210964736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "51:244:1:-:0;;;160:133;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;229:10;223:5;;:16;;;;;;;;;;;;;;;;;;250:9;241:8;;:18;;;;;;;;;;;;;;;;;;275:11;262:10;:24;;;;160:133;;51:244;;;;;;",
+  "deployedSourceMap": "51:244:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;129:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;98;;;:::i;:::-;;;;;;;;;;;;;;;;;;;129;;;;;;;;;;;;;:::o;98:::-;;;;:::o",
+  "source": "pragma solidity ^0.7.0;\nimport \"./greencoin.sol\";\n\ncontract TokenSale{\n    address admin;\n        uint256 public tokenPrice;\n    greencoin public ercToken;\n    constructor( greencoin _ercToken, uint256 _tokenPrice) public{\nadmin=msg.sender;\nercToken=_ercToken;\n tokenPrice = _tokenPrice;\n    }\n}",
+  "sourcePath": "/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/TokenSale.sol",
+  "ast": {
+    "absolutePath": "/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/TokenSale.sol",
+    "exportedSymbols": {
+      "SafeMath": [
+        362
+      ],
+      "TokenSale": [
+        63
+      ],
+      "greencoin": [
+        317
+      ]
+    },
+    "id": 64,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/greencoin.sol",
+        "file": "./greencoin.sol",
+        "id": 35,
+        "nodeType": "ImportDirective",
+        "scope": 64,
+        "sourceUnit": 363,
+        "src": "24:25:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 63,
+        "linearizedBaseContracts": [
+          63
+        ],
+        "name": "TokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 37,
+            "mutability": "mutable",
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 63,
+            "src": "75:13:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 36,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "75:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "7ff9b596",
+            "id": 39,
+            "mutability": "mutable",
+            "name": "tokenPrice",
+            "nodeType": "VariableDeclaration",
+            "scope": 63,
+            "src": "98:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 38,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "98:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "7f2f767e",
+            "id": 41,
+            "mutability": "mutable",
+            "name": "ercToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 63,
+            "src": "129:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_greencoin_$317",
+              "typeString": "contract greencoin"
+            },
+            "typeName": {
+              "id": 40,
+              "name": "greencoin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 317,
+              "src": "129:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_greencoin_$317",
+                "typeString": "contract greencoin"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "221:72:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 48,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 37,
+                      "src": "223:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 49,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "229:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 50,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "229:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "223:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "223:16:1"
+                },
+                {
+                  "expression": {
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 53,
+                      "name": "ercToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 41,
+                      "src": "241:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_greencoin_$317",
+                        "typeString": "contract greencoin"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 54,
+                      "name": "_ercToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43,
+                      "src": "250:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_greencoin_$317",
+                        "typeString": "contract greencoin"
+                      }
+                    },
+                    "src": "241:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_greencoin_$317",
+                      "typeString": "contract greencoin"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "241:18:1"
+                },
+                {
+                  "expression": {
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 57,
+                      "name": "tokenPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 39,
+                      "src": "262:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 58,
+                      "name": "_tokenPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45,
+                      "src": "275:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "262:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 60,
+                  "nodeType": "ExpressionStatement",
+                  "src": "262:24:1"
+                }
+              ]
+            },
+            "id": 62,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 46,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "mutability": "mutable",
+                  "name": "_ercToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 62,
+                  "src": "173:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_greencoin_$317",
+                    "typeString": "contract greencoin"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "greencoin",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 317,
+                    "src": "173:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_greencoin_$317",
+                      "typeString": "contract greencoin"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45,
+                  "mutability": "mutable",
+                  "name": "_tokenPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 62,
+                  "src": "194:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 44,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "171:43:1"
+            },
+            "returnParameters": {
+              "id": 47,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "221:0:1"
+            },
+            "scope": 63,
+            "src": "160:133:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 64,
+        "src": "51:244:1"
+      }
+    ],
+    "src": "0:295:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/TokenSale.sol",
+      "exportedSymbols": {
+        "SafeMath": [
+          362
+        ],
+        "TokenSale": [
+          63
+        ],
+        "greencoin": [
+          317
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 34,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 363,
+          "absolutePath": "/home/pranshu_ubuntu/Documents/Chain-O-Plant_chainlink_hackathon/Chain-O-Plant_chainlink_hackathon/ERC20_GreencoinToken/contracts/greencoin.sol",
+          "file": "./greencoin.sol",
+          "scope": 64,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 35,
+        "name": "ImportDirective",
+        "src": "24:25:1"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            63
+          ],
+          "name": "TokenSale",
+          "scope": 64
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "admin",
+              "scope": 63,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 36,
+                "name": "ElementaryTypeName",
+                "src": "75:7:1"
+              }
+            ],
+            "id": 37,
+            "name": "VariableDeclaration",
+            "src": "75:13:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "7ff9b596",
+              "mutability": "mutable",
+              "name": "tokenPrice",
+              "scope": 63,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 38,
+                "name": "ElementaryTypeName",
+                "src": "98:7:1"
+              }
+            ],
+            "id": 39,
+            "name": "VariableDeclaration",
+            "src": "98:25:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "7f2f767e",
+              "mutability": "mutable",
+              "name": "ercToken",
+              "scope": 63,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract greencoin",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "greencoin",
+                  "referencedDeclaration": 317,
+                  "type": "contract greencoin"
+                },
+                "id": 40,
+                "name": "UserDefinedTypeName",
+                "src": "129:9:1"
+              }
+            ],
+            "id": 41,
+            "name": "VariableDeclaration",
+            "src": "129:25:1"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 63,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_ercToken",
+                      "scope": 62,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract greencoin",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "greencoin",
+                          "referencedDeclaration": 317,
+                          "type": "contract greencoin"
+                        },
+                        "id": 42,
+                        "name": "UserDefinedTypeName",
+                        "src": "173:9:1"
+                      }
+                    ],
+                    "id": 43,
+                    "name": "VariableDeclaration",
+                    "src": "173:19:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_tokenPrice",
+                      "scope": 62,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 44,
+                        "name": "ElementaryTypeName",
+                        "src": "194:7:1"
+                      }
+                    ],
+                    "id": 45,
+                    "name": "VariableDeclaration",
+                    "src": "194:19:1"
+                  }
+                ],
+                "id": 46,
+                "name": "ParameterList",
+                "src": "171:43:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 47,
+                "name": "ParameterList",
+                "src": "221:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 37,
+                              "type": "address",
+                              "value": "admin"
+                            },
+                            "id": 48,
+                            "name": "Identifier",
+                            "src": "223:5:1"
+                          },
+                          {
+                            "attributes": {
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4294967281,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 49,
+                                "name": "Identifier",
+                                "src": "229:3:1"
+                              }
+                            ],
+                            "id": 50,
+                            "name": "MemberAccess",
+                            "src": "229:10:1"
+                          }
+                        ],
+                        "id": 51,
+                        "name": "Assignment",
+                        "src": "223:16:1"
+                      }
+                    ],
+                    "id": 52,
+                    "name": "ExpressionStatement",
+                    "src": "223:16:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract greencoin"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 41,
+                              "type": "contract greencoin",
+                              "value": "ercToken"
+                            },
+                            "id": 53,
+                            "name": "Identifier",
+                            "src": "241:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 43,
+                              "type": "contract greencoin",
+                              "value": "_ercToken"
+                            },
+                            "id": 54,
+                            "name": "Identifier",
+                            "src": "250:9:1"
+                          }
+                        ],
+                        "id": 55,
+                        "name": "Assignment",
+                        "src": "241:18:1"
+                      }
+                    ],
+                    "id": 56,
+                    "name": "ExpressionStatement",
+                    "src": "241:18:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 39,
+                              "type": "uint256",
+                              "value": "tokenPrice"
+                            },
+                            "id": 57,
+                            "name": "Identifier",
+                            "src": "262:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 45,
+                              "type": "uint256",
+                              "value": "_tokenPrice"
+                            },
+                            "id": 58,
+                            "name": "Identifier",
+                            "src": "275:11:1"
+                          }
+                        ],
+                        "id": 59,
+                        "name": "Assignment",
+                        "src": "262:24:1"
+                      }
+                    ],
+                    "id": 60,
+                    "name": "ExpressionStatement",
+                    "src": "262:24:1"
+                  }
+                ],
+                "id": 61,
+                "name": "Block",
+                "src": "221:72:1"
+              }
+            ],
+            "id": 62,
+            "name": "FunctionDefinition",
+            "src": "160:133:1"
+          }
+        ],
+        "id": 63,
+        "name": "ContractDefinition",
+        "src": "51:244:1"
+      }
+    ],
+    "id": 64,
+    "name": "SourceUnit",
+    "src": "0:295:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x070a3dec1696d142C141e0a88147283477F589C9",
+      "transactionHash": "0xee4a6eeee23250ee0cfb584f43bb6fd3db0d463826fd7c0584b5216226b1f300"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-21T15:07:46.471Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
