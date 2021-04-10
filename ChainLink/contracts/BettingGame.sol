@@ -18,6 +18,21 @@ import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
 import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
  /* !UPDATE, import aggregator contract */
 
+/** Contract created based on: https://docs.chain.link/docs/get-a-random-number
+ *  Contract created only for educational purposes, by: github.com/dappuniversity
+ *  You will need testnet ETH and LINK.
+ *     - Rinkeby ETH faucet: https://faucet.rinkeby.io/
+ *     - Rinkeby LINK faucet: https://rinkeby.chain.link/
+ */
+
+/** !UPDATE
+ * min. bet >= $1 in Ethereum
+ * 
+ * ETH/USD price will be received from Chainlink Oracles prices feed aggregator.
+ * more: https://docs.chain.link/docs/using-chainlink-reference-contracts.
+ */
+/* !UPDATE, import aggregator contract */
+
 contract BettingGame is VRFConsumerBase {
     
   /** !UPDATE
@@ -30,8 +45,8 @@ contract BettingGame is VRFConsumerBase {
   uint256 public randomResult;
   
   //Network: Rinkeby
-  address constant VFRC_address = 0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9; // VRF Coordinator
-  address constant LINK_address = 0xa36085F69e2889c224210F603D836748e7dC0088; // LINK token
+  address constant VFRC_address = 0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B; // VRF Coordinator
+  address constant LINK_address = 0x01BE23585060835E02B77ef475b0Cc51aA1e0709; // LINK token
   
   //declaring 50% chance, (0.5*(uint256+1))
   uint256 constant half = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
@@ -53,12 +68,12 @@ contract BettingGame is VRFConsumerBase {
   }
 
   modifier onlyAdmin() {
-    require(msg.sender == admin, "caller is not the admin");
+    require(msg.sender == admin, 'caller is not the admin');
     _;
   }
 
   modifier onlyVFRC() {
-    require(msg.sender == VFRC_address, "only VFRC can call this function");
+    require(msg.sender == VFRC_address, 'only VFRC can call this function');
     _;
   }
   
@@ -124,14 +139,14 @@ contract BettingGame is VRFConsumerBase {
      * Checking if msg.value is higher or equal than $1.
     */
     uint weiUsd = weiInUsd();
-    require(msg.value>=weiUsd, "Error, msg.value must be >= $1");
+    require(msg.value>=weiUsd, 'Error, msg.value must be >= 1');
       
     //bet=0 is low, refers to 1-3  dice values
     //bet=1 is high, refers to 4-6 dice values
-    require(bet<=1, "Error, accept only 0 and 1");
+    require(bet<=1, 'Error, accept only 0 and 1');
 
     //vault balance must be at least equal to msg.value
-    require(address(this).balance>=msg.value, "Error, insufficent vault balance");
+    require(address(this).balance>=msg.value, 'Error, insufficent vault balance');
     
     //each bet has unique id
     games[gameId] = Game(gameId, bet, seed, msg.value, msg.sender);
@@ -194,7 +209,7 @@ contract BettingGame is VRFConsumerBase {
    * Withdraw Ether from this contract (admin option).
    */
   function withdrawEther(uint256 amount) external payable onlyAdmin {
-    require(address(this).balance>=amount, "Error, contract has insufficent balance");
+    require(address(this).balance>=amount, 'Error, contract has insufficent balance');
     admin.transfer(amount);
     
     emit Withdraw(admin, amount);
