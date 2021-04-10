@@ -1,6 +1,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider')
 require('dotenv').config()
 
+process.env.UV_THREADPOOL_SIZE = 128;
 const mnemonic = process.env.MNEMONIC
 const url = process.env.RPC_URL
 
@@ -21,6 +22,7 @@ module.exports = {
         return new HDWalletProvider(mnemonic, url)
       },
       network_id: '42',
+      networkCheckTimeout: 999999,
       skipDryRun: true
     },
   },
