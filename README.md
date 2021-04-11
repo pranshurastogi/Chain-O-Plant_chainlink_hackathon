@@ -1,13 +1,2 @@
-# Chainlink Truffle Box
-
-<br/>
-<p align="center">
-<a href="https://chain.link" target="_blank">
-<img src="images/UI1.png" width="400" alt="Chainlink Truffle logo">
-<img src="images/UI2.png" width="400" alt="Chainlink Truffle logo">
-<img src="images/betting1.png" width="400" alt="Chainlink Truffle logo">
-<img src="images/betting2.png" width="400" alt="Chainlink Truffle logo">
-</a>
-</p>
-<br/>
-
+# Chain-O-Plant_chainlink_hackathon
+Chain-O-Plant where O stands for the ecosystem, it's a dapp focused to boost environment and local art that is getting lost in this supercomputer era.
