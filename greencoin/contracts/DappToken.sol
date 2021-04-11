@@ -1,10 +1,9 @@
 pragma solidity ^0.6.0;
 
 contract DappToken {
-  
-    string  public name = "Green Coin";
-    string  public symbol = "GRC";
-    string  public standard = "Green Coin v1.0";
+    string  public name = "DApp Token";
+    string  public symbol = "DAPP";
+    string  public standard = "DApp Token v1.0";
     uint256 public totalSupply;
 
     event Transfer(
@@ -22,7 +21,7 @@ contract DappToken {
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
-  constructor (uint256 _initialSupply) public {
+    constructor (uint256 _initialSupply) public {
         balanceOf[msg.sender] = _initialSupply;
         totalSupply = _initialSupply;
     }
@@ -33,7 +32,7 @@ contract DappToken {
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
 
-       emit Transfer(msg.sender, _to, _value);
+        Transfer(msg.sender, _to, _value);
 
         return true;
     }

@@ -4,7 +4,6 @@ pragma solidity ^0.6.0;
 import "./DappToken.sol";
 
 contract DappTokenSale {
-   
     address payable admin;
     DappToken public tokenContract;
     uint256 public tokenPrice;
@@ -12,8 +11,8 @@ contract DappTokenSale {
 
     event Sell(address _buyer, uint256 _amount);
 
-    constructor (DappToken _tokenContract, uint256 _tokenPrice) public {
-        admin = address(uint160(msg.sender));
+   constructor (DappToken _tokenContract, uint256 _tokenPrice) public {
+        admin = msg.sender;
         tokenContract = _tokenContract;
         tokenPrice = _tokenPrice;
     }
@@ -24,7 +23,7 @@ contract DappTokenSale {
 
     function buyTokens(uint256 _numberOfTokens) public payable {
         require(msg.value == multiply(_numberOfTokens, tokenPrice));
-     
+        require(tokenContract.balanceOf(address(this)) >= _numberOfTokens);
         require(tokenContract.transfer(msg.sender, _numberOfTokens));
 
         tokensSold += _numberOfTokens;
@@ -34,9 +33,10 @@ contract DappTokenSale {
 
     function endSale() public {
         require(msg.sender == admin);
-        require(tokenContract.transfer(admin , tokenContract.balanceOf(address(this))));
+        require(tokenContract.transfer(admin, tokenContract.balanceOf(address(this))));
 
-        
-      admin.transfer(address(address (this)).balance);
+        // UPDATE: Let's not destroy the contract here
+        // Just transfer the balance to the admin
+        admin.transfer(address(address(this)).balance);
     }
 }
